@@ -1,0 +1,87 @@
+/* GLOBLE  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, 
+body {
+    font-family: 'Hind', sans-serif;
+}
+
+/* HEADER  */
+/* trước hover  */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 100%;
+
+}
+#portNavbar .nav-link::after{
+    content: '';
+    width: 0%;
+    height: 5px;
+    background-color: #35a22c;
+    display: block;
+    transition: all .5s;
+}
+/* sau hover  */
+#portNavbar .nav-link:hover::after{
+    width: 100%;
+}
+/* gọi class="nav-item active => .nav-item.active  */
+#portNavbar .active .nav-link::after{
+    width: 100%;
+}
+
+/* CAROUSEL  */
+/* b1: chỉnh kích thước ảnh avatar
+b2: chỉnh hình nền (height)
+b3: chỉnh caption ở giữa carousel
+b4: chỉnh hình dạng indicators */
+
+/* b1: chỉnh kích thước ảnh avatar  */
+.portAvatar{
+    width: 140px;
+    border-radius: 50%;
+}
+
+/* b2: chỉnh hình nền (height)  */
+/* vw (viewport width) thường dùng cho font-size, vùng nội dung chữ quan trọng mà KH ko muốn thay đổi nội dung (slogan, banner...)
+%: kích thước sẽ theo thẻ cha gần nhất 
+vh (viewport height): đơn vị sẽ theo kích thước của trình duyệt */
+
+#portCarouselID .carousel-item{
+    /* 100vh luôn có % bằng với khung trình duyệt không quan tâm cha con  */
+    height: 100vh;
+}
+#portCarouselID .carousel-item>img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+/* b3: chỉnh caption ở giữa carousel
+Căn giữa với thẻ position absolute  */
+#portCarouselID .carousel-caption{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* b4: chỉnh hình dạng indicators  */
+#portCarouselID .carousel-indicators li {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+#portCarouselID .carousel-indicators li.active {
+    background-color: #35a22c;
+}
+
+
+
